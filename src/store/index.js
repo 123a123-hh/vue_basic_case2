@@ -31,32 +31,35 @@ export default new Vuex.Store({
       state.copy_list = state.list
     },
     delete_the_index_user(state) {
-      for (var i = 0; i < state.list.length; i++) {
-        if (state.list[i].index) {
-          var index = state.list.indexOf(state.list[i])
-          state.list.splice(index, 1)
-        }
-      }
+      state.list = state.list.filter(x => x.index === false)
+      // for (var i = 0; i < state.list.length; i++) {
+      //   if (state.list[i].index) {
+      //     var index = state.list.indexOf(state.list[i])
+      //     state.list.splice(index, 1)
+      //   }
+      // }
       state.copy_list = state.list
     },
     update(state, i) {
-      var table = []
+      // var table = []
       if (i === 1) {
         state.list = state.copy_list
       } else if (i === 2) {
-        for (i = 0; i < state.copy_list.length; i++) {
-          if (state.copy_list[i].index === true) {
-            table.push(state.copy_list[i])
-          }
-        }
-        state.list = table
+        state.list = state.copy_list.filter(x => x.index === true)
+        // for (i = 0; i < state.copy_list.length; i++) {
+        //   if (state.copy_list[i].index === true) {
+        //     table.push(state.copy_list[i])
+        //   }
+        // }
+        // state.list = table
       } else if (i === 3) {
-        for (i = 0; i < state.copy_list.length; i++) {
-          if (state.copy_list[i].index === false) {
-            table.push(state.copy_list[i])
-          }
-        }
-        state.list = table
+        state.list = state.copy_list.filter(x => x.index === false)
+        // for (i = 0; i < state.copy_list.length; i++) {
+        //   if (state.copy_list[i].index === false) {
+        //     table.push(state.copy_list[i])
+        //   }
+        // }
+        // state.list = table
       }
     }
   },
