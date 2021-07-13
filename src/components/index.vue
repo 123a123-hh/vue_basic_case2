@@ -43,7 +43,7 @@
         <span>{{ this.$store.state.list.length }}条剩余</span>
         <el-radio-group v-model="isCollapse" @change="radio_change">
           <el-radio-button :label="1">全部</el-radio-button>
-          <el-radio-button :label="2">已完成</el-radio-button>
+          <el-radio-button :label="2">已经完成</el-radio-button>
           <el-radio-button :label="3">未完成</el-radio-button>
         </el-radio-group>
         <el-button type="text" @click="handleDelete_index()"
